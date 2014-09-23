@@ -2,7 +2,7 @@
 <resources>
 
     <color name="white">#fff</color>
-    <color name="list_divider">#B0B0B0</color>
+    <color name="list_divider">#EBEBEB</color>
     <color name="cokelat_muda">#2e2e2e</color>
     <color name="cokelat_tua">#252525</color>
     <color name="yellow">#fdca00</color>

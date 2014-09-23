@@ -3,11 +3,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5dp" >
+    android:background="#EBEBEB">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/galleryView"
+    <LinearLayout
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_margin="5dp">
 
+        <android.support.v4.view.ViewPager
+            android:id="@+id/galleryView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
 </LinearLayout>

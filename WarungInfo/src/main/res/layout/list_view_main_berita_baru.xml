@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/list_divider">
 
-    <EditText
-        android:id="@+id/lg_email"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/relativ_search"
         android:layout_height="wrap_content"
-        android:background="@drawable/shapeoval_textview"
-        android:drawableLeft="@drawable/search_glass"
-        android:hint="Ketikan Kata Kunci"
-        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_edittext"
         android:padding="5dp"
         android:layout_marginBottom="3dp"
         android:layout_marginTop="3dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
-        android:textSize="@dimen/username_textSize" >
-    </EditText>
+        android:layout_marginRight="1dp">
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search_glass"
+            android:layout_centerVertical="true" />
+
+        <EditText
+            android:id="@+id/lg_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/img_search"
+            android:layout_centerVertical="true"
+            android:hint="@string/kata_kunci"
+            android:background="@android:color/transparent"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:textSize="@dimen/username_textSize"></EditText>
+
+    </RelativeLayout>
+
 
     <ListView
         android:id="@android:id/list"
@@ -30,7 +46,6 @@
         android:footerDividersEnabled="false"
         android:divider="@color/list_divider"
         android:dividerHeight="10dp"
-        android:headerDividersEnabled="false">
-    </ListView>
+        android:headerDividersEnabled="false"></ListView>
 
 </LinearLayout>

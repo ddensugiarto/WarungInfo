@@ -2,17 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cm="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_centerVertical="true"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:paddingBottom="10dp"
-    android:paddingTop="10dp">
+    android:paddingTop="10dp"
+    android:background="#EBEBEB">
 
     <ImageView
         android:id="@+id/image_galeri"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/img_height"
+        android:layout_height="@dimen/img_height_galeri"
         android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
         android:layout_alignParentTop="true"
@@ -24,8 +25,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:maxLines="3"
-        android:background="@color/cokelat_tua"
-        android:text="INI TITLE\nCOba"
+        android:background="#CC252525"
+        android:text="INI TITLE\nCOBA"
         android:textSize="@dimen/textSizeTittle"
         android:layout_below="@+id/image_galeri"
         android:padding="10dp"

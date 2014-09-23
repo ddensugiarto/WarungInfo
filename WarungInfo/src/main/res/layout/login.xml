@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edittext"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:paddingLeft="10dp"
                 android:textSize="@dimen/username_textSize"
                 android:inputType="textEmailAddress"
@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edittext"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:paddingLeft="10dp"
@@ -81,26 +81,22 @@
             android:paddingBottom="5dp"
             android:paddingTop="5dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn_lg_login"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/btn_height"
-                android:textSize="@dimen/btn_textSize"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/btn_login"
-                android:textColor="@android:color/white" />
+                android:background="@drawable/btn_login" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn_lg_signup"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/btn_height"
-                android:textSize="@dimen/btn_textSize"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/btn_signup"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/white" />
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
 
@@ -118,20 +114,20 @@
             android:id="@+id/rel1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_toLeftOf="@+id/rel2">
 
 
-        <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
-            cm:fontType="roman"
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forgot Password?"
-            android:textColor="@android:color/white"
-            android:layout_toLeftOf="@+id/txt_tap_here"
-            android:textSize="@dimen/forgot_textSize"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"/>
+            <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
+                cm:fontType="co"
+                android:id="@+id/btnSignHere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password?"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/forgot_textSize"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
 
@@ -141,18 +137,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp">
 
-        <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
-            cm:fontType="roman"
-            android:id="@+id/txt_tap_here"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tap Here"
-            android:textColor="@android:color/white"
-            android:clickable="true"
-            android:textStyle="bold"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:textSize="@dimen/forgot_textSize"/>
+            <Button
+                android:id="@+id/btn_tap_here"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Tap Here"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/forgot_textSize"/>
 
         </RelativeLayout>
     </LinearLayout>

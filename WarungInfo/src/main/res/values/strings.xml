@@ -39,4 +39,11 @@
     <!-- Content Description -->
     <string name="description_list_icon">Item Icon</string>
 
+    <!-- TEXT HINT -->
+    <string name="username"><i>Username or email</i></string>
+    <string name="password"><i>Password</i></string>
+    <string name="confirm"><i>Confirm Password</i></string>
+    <string name="email"><i>Email</i></string>
+    <string name="kata_kunci"><i>Ketikan Kata Kunci</i></string>
+
 </resources>

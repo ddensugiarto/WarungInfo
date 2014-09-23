@@ -30,6 +30,7 @@
             android:textSize="@dimen/username_textSize"
             android:layout_toRightOf="@+id/icon_navbar"
             android:textColor="@color/white"
+            android:text="INI SLIDER TEXT"
             android:gravity="center_vertical"/>
 
     </RelativeLayout>

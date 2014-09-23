@@ -5,9 +5,9 @@
 
     <!-- SPLASH -->
     <dimen name="splash_logo_layout_height">150dp</dimen>
-    <dimen name="splash_logo_poweredBy_width">200dp</dimen>
+    <dimen name="splash_logo_poweredBy_width">180dp</dimen>
     <dimen name="splash_logo_poweredBy_height">50dp</dimen>
-	
+
 	<!-- LOGIN -->
 	<dimen name="logo_layout_height">150dp</dimen>
 	<dimen name="logo_layout_width">150dp</dimen>
@@ -18,24 +18,27 @@
     <dimen name="forgot_textSize">14sp</dimen>
 
 	<!-- SIDE MENU -->
-	<dimen name="icon_width">30dp</dimen>
-    <dimen name="icon_height">30dp</dimen>
+	<dimen name="icon_width">25dp</dimen>
+    <dimen name="icon_height">25dp</dimen>
     <dimen name="icon_margin_left">5dp</dimen>
     <dimen name="icon_margin_right">10dp</dimen>
     <dimen name="text_size_side">16dp</dimen>
 
     <!-- NEWS -->
-    <dimen name="textSizeTittle">18sp</dimen>
+    <dimen name="textSizeTittle">16sp</dimen>
     <dimen name="textSizeTanggal">12sp</dimen>
-    <dimen name="textSizeIsi">16sp</dimen>
+    <dimen name="textSizeIsi">12sp</dimen>
     <dimen name="layout_width">30dp</dimen>
     <dimen name="layout_height">30dp</dimen>
-    <dimen name="img_height">193dp</dimen>
+    <dimen name="img_height">120dp</dimen>
+
+    <!-- GALERI -->
+    <dimen name="img_height_galeri">300dp</dimen>
 
     <!-- PROFIL BINLAK -->
 	<dimen name="ImageView_Height">200dp</dimen>
 
     <!-- AGENDA -->
     <dimen name="width_text">320dp</dimen>
-	
+
 </resources>

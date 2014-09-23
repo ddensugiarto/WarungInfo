@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class IsiBerita extends Activity {
 
     TextView txtTittle, txtTanggal, txtIsi;
-    ImageButton btnShare, btnComment, btnBeriComment;
+    ImageButton btnShare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,21 +42,6 @@ public class IsiBerita extends Activity {
             }
         });
 
-        btnComment = (ImageButton) findViewById(R.id.berita_btnKomentar);
-        btnComment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Masih dalam tahap penyelesaian", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        btnBeriComment = (ImageButton) findViewById(R.id.berita_btnKomentar);
-        btnBeriComment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Masih dalam tahap penyelesaian", Toast.LENGTH_LONG).show();
-            }
-        });
 
         // get action bar
         ActionBar actionBar = getActionBar();

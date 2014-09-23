@@ -21,7 +21,7 @@
             android:layout_height="@dimen/logo_layout_height"
             android:src="@drawable/logo_app"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"/>
+            android:layout_alignParentTop="true" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -38,16 +38,33 @@
             android:paddingTop="5dp">
 
             <EditText
+                android:id="@+id/su_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:hint="@string/username"
+                android:paddingLeft="10dp"
+                android:textSize="@dimen/username_textSize"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"></EditText>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@android:color/darker_gray" />
+
+            <EditText
                 android:id="@+id/su_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edittext"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:paddingLeft="10dp"
                 android:textSize="@dimen/username_textSize"
                 android:inputType="textEmailAddress"
-                android:singleLine="true">
-            </EditText>
+                android:singleLine="true"></EditText>
 
             <View
                 android:layout_width="match_parent"
@@ -61,7 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edittext"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:paddingLeft="10dp"
@@ -79,7 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edittext"
-                android:hint="Confirm Password"
+                android:hint="@string/confirm"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:paddingLeft="10dp"
@@ -99,11 +116,10 @@
             android:paddingBottom="5dp"
             android:paddingTop="5dp">
 
-            <Button
-                android:id="@+id/btn_signup"
+            <ImageButton
+                android:id="@+id/btn_sg_signup"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/btn_height"
-                android:textSize="@dimen/btn_textSize"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/btn_signup"
@@ -125,20 +141,20 @@
             android:id="@+id/rel1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_toLeftOf="@+id/rel2">
 
 
             <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
                 cm:fontType="co"
-                android:id="@+id/textView2"
+                android:id="@+id/btnSignHere"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Forgot Password?"
+                android:text="Already Have Account?"
                 android:textColor="@android:color/white"
-                android:layout_toLeftOf="@+id/txt_tap_here"
                 android:textSize="@dimen/forgot_textSize"
                 android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"/>
+                android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
 
@@ -148,14 +164,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp">
 
-            <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
-                cm:fontType="co"
-                android:id="@+id/txt_tap_here"
+            <Button
+                android:id="@+id/btn_sign_here"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tap Here"
-                android:textColor="@android:color/white"
-                android:clickable="true"
+                android:background="@android:color/transparent"
+                android:text="Sign Here"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
@@ -163,7 +178,6 @@
 
         </RelativeLayout>
     </LinearLayout>
-
 
 
 </RelativeLayout>

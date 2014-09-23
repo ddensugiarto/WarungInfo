@@ -23,8 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="5dp"
-            android:background="@color/cokelat_muda"
+            android:padding="5dp"
+            android:background="#2E2E2E"
             android:text="JELAJAHI"
             android:textColor="@android:color/white"
             android:textSize="@dimen/username_textSize" />
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_jelajahi"
             android:choiceMode="singleChoice"
-            android:divider="@color/list_divider"
+            android:divider="#323232"
             android:dividerHeight="0.5dp"
             android:listSelector="@drawable/drawer_list_selection">
 
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_above="@+id/relative"
-            android:background="@color/list_divider" />
+            android:background="#323232" />
 
         <RelativeLayout
             android:id="@+id/relative"

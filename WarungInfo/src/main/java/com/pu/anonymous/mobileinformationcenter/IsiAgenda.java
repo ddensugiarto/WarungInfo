@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class IsiAgenda extends Activity {
 
     TextView txtTittle, txtTanggal, txtIsi;
-    ImageButton btnShare, btnComment, btnBeriComment;
+    ImageButton btnShare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,22 +36,6 @@ public class IsiAgenda extends Activity {
 
         btnShare = (ImageButton) findViewById(R.id.agenda_btnShare);
         btnShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Masih dalam tahap penyelesaian", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        btnComment = (ImageButton) findViewById(R.id.agenda_btnKomentar);
-        btnComment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Masih dalam tahap penyelesaian", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        btnBeriComment = (ImageButton) findViewById(R.id.agenda_btnDetail);
-        btnBeriComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "Masih dalam tahap penyelesaian", Toast.LENGTH_LONG).show();
