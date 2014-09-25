@@ -39,7 +39,21 @@
         </activity>
 
         <activity
-            android:name="com.pu.anonymous.mobileinformationcenter.SignUp"
+            android:name=".SignUp"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <activity
+            android:name=".ForgotPassword"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <activity
+            android:name=".ChangePassword"
             android:hardwareAccelerated="false"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -50,7 +64,8 @@
             android:hardwareAccelerated="false"
             android:screenOrientation="portrait"
             android:icon="@android:color/transparent"
-            android:theme="@style/App_theme"
+            android:theme="@style/App_themeMenu"
+            android:windowSoftInputMode="stateHidden|adjustPan"
             >
         </activity>
 
@@ -58,14 +73,14 @@
             android:name=".IsiBerita"
             android:label="Berita"
             android:screenOrientation="portrait"
-            android:theme="@style/App_theme" >
+            android:theme="@style/App_themeBack" >
         </activity>
 
         <activity
             android:name=".IsiAgenda"
             android:label="Agenda"
             android:screenOrientation="portrait"
-            android:theme="@style/App_theme" >
+            android:theme="@style/App_themeBack" >
         </activity>
     </application>
 

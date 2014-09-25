@@ -8,7 +8,6 @@ import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +33,7 @@ import java.util.ArrayList;
 public class FragmentGaleri extends Fragment {
 
     private DisplayImageOptions options;
-    private ActionBarActivity activity;
+//    private ActionBarActivity activity;
 
     public FragmentGaleri() {
     }
@@ -42,12 +41,13 @@ public class FragmentGaleri extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        this.activity = (ActionBarActivity) activity;
+//        this.activity = (ActionBarActivity) activity;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         initImageLoader();
         initImageOption();
 
@@ -82,7 +82,7 @@ public class FragmentGaleri extends Fragment {
         // or you can create default configuration by
         //  ImageLoaderConfiguration.createDefault(this);
         // method.
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(activity)
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getActivity())
                 .threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator())

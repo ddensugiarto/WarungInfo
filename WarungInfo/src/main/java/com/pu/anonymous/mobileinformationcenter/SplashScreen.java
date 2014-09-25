@@ -2,14 +2,17 @@ package com.pu.anonymous.mobileinformationcenter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.preference.PreferenceManager;
 import android.view.Window;
 
 
 public class SplashScreen extends Activity {
+
+    public static String session, usernamepref,
+            passwordpref;
 
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -26,8 +29,7 @@ public class SplashScreen extends Activity {
         public void run() {
             try {
                 sleep(3500);
-
-                startActivity(new Intent("com.pu.anonymous.mobileinformationcenter.Login"));
+                session();
                 finish();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -43,5 +45,24 @@ public class SplashScreen extends Activity {
 
     public void onBackPressed() {
 
+    }
+    private void LoadPreferencesSession() {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        session = sharedPreferences.getString("session", "");
+        usernamepref = sharedPreferences.getString("username", "");
+        passwordpref = sharedPreferences.getString("password", "");
+
+    }
+
+    public void session() {
+        LoadPreferencesSession();
+        System.out.println("session :" + session);
+        if (session.equals("login")) {
+            startActivity(new Intent(SplashScreen.this, MainActivity.class));
+
+        } else {
+            startActivity(new Intent(SplashScreen.this, Login.class));
+        } finish();
     }
 }

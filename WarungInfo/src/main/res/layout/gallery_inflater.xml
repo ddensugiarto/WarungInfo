@@ -25,11 +25,12 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:maxLines="3"
-        android:background="#CC252525"
+        android:background="#E6252525"
         android:text="INI TITLE\nCOBA"
         android:textSize="@dimen/textSizeTittle"
         android:layout_below="@+id/image_galeri"
         android:padding="10dp"
+        android:layout_marginTop="-50dp"
         android:textColor="@android:color/white"
         cm:fontType="roman" />
 
@@ -37,7 +38,7 @@
         android:id="@+id/detail_galeri"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title_galeri"
+        android:layout_below="@id/image_galeri"
         android:layout_alignParentRight="true"
         android:gravity="center_vertical"
         android:layout_marginTop="10dp"

@@ -40,10 +40,15 @@
     <string name="description_list_icon">Item Icon</string>
 
     <!-- TEXT HINT -->
-    <string name="username"><i>Username or email</i></string>
+    <string name="username"><i>Username</i></string>
     <string name="password"><i>Password</i></string>
     <string name="confirm"><i>Confirm Password</i></string>
+    <string name="reset"><i>Reset Code</i></string>
+    <string name="new_password"><i>New Password</i></string>
+    <string name="confirm_new_pass"><i>Confirm New Password</i></string>
     <string name="email"><i>Email</i></string>
+    <string name="username_email"><i>Username or Email</i></string>
     <string name="kata_kunci"><i>Ketikan Kata Kunci</i></string>
+    <string name="ketikan_email"><i>Ketikan Email</i></string>
 
 </resources>

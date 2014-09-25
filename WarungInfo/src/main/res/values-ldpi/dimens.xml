@@ -26,7 +26,8 @@
     <dimen name="img_height">80dp</dimen>
 
     <!-- GALERI -->
-    <dimen name="img_height_galeri">200dp</dimen>
+    <dimen name="img_height_galeri">250dp</dimen>
+    <dimen name="margin_top">-55dp</dimen>
 
     <!-- PROFIL BINLAK -->
     <dimen name="ImageView_Height">80dp</dimen>

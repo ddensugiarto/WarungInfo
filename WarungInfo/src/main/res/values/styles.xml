@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="App_theme" parent="Theme.AppCompat.Light">
@@ -13,6 +10,13 @@
         <item name="android:actionBarTabStyle">@style/CustomTabPageIndicator</item>
         <item name="android:actionBarStyle">@style/BlueActionBar</item>
         <item name="android:icon">@android:color/transparent</item>
+        <item name="android:homeAsUpIndicator">@drawable/new_indicator_menu</item>
+    </style>
+
+    <style name="App_themeBack" parent="Theme.AppCompat.Light">
+        <item name="android:actionBarTabStyle">@style/CustomTabPageIndicator</item>
+        <item name="android:actionBarStyle">@style/BlueActionBar</item>
+        <item name="android:homeAsUpIndicator">@drawable/topbar_icon_back</item>
     </style>
 
     <style name="BlueActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
@@ -20,17 +24,15 @@
         <item name="android:titleTextStyle">@style/TextActionBar</item>
         <item name="android:height">40dp</item>
         <item name="background">@color/biru</item>
-        <item name="android:homeAsUpIndicator">@drawable/button_menu</item>
     </style>
 
     <style name="TextActionBar" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="CustomTabPageIndicator" parent="Widget.AppCompat.ActionBar.TabBar">
-        <!--<item name="android:background">@drawable/tab_indicator_ab_example</item>-->
-        <item name="android:textAppearance">@style/CustomTabPageIndicator.Text</item>
+    <style name="CustomTabPageIndicator" parent="Widget.TabPageIndicator">
         <item name="android:background">@drawable/tab_indicator_ab_example</item>
+        <item name="android:textAppearance">@style/CustomTabPageIndicator.Text</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">12sp</item>
         <item name="android:paddingLeft">8dp</item>
@@ -45,73 +47,32 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Widget">
+    </style>
+
+    <style name="Widget.TabPageIndicator" parent="Widget">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tab_indicator_ab_example</item>
+        <item name="android:paddingLeft">22dip</item>
+        <item name="android:paddingRight">22dip</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="TextAppearance.TabPageIndicator" parent="Widget">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.IconPageIndicator" parent="Widget">
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+    </style>
+
+
 </resources>
 
 
-<!--<resources>-->
-
-    <!--<style name="AppTheme" parent="@android:style/Theme.Holo.Light">-->
-        <!--<item name="android:actionBarItemBackground">@drawable/selectable_background_example</item>-->
-        <!--<item name="android:popupMenuStyle">@style/PopupMenu.Example</item>-->
-        <!--<item name="android:dropDownListViewStyle">@style/DropDownListView.Example</item>-->
-        <!--<item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Example</item>-->
-        <!--<item name="android:actionDropDownStyle">@style/DropDownNav.Example</item>-->
-        <!--<item name="android:actionBarStyle">@style/ActionBar.Solid.Example</item>-->
-        <!--<item name="android:actionModeBackground">@drawable/cab_background_top_example</item>-->
-        <!--<item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_example</item>-->
-        <!--<item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Example</item>-->
-
-
-    <!--</style>-->
-
-    <!--<style name="ActionBar.Solid.Example" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">-->
-        <!--<item name="android:background">@drawable/ab_solid_example</item>-->
-        <!--<item name="android:backgroundStacked">@drawable/ab_stacked_solid_example</item>-->
-        <!--<item name="android:backgroundSplit">@drawable/ab_bottom_solid_example</item>-->
-        <!--<item name="android:progressBarStyle">@style/ProgressBar.Example</item>-->
-        <!--<item name="android:titleTextStyle">@style/TextActionBar</item>-->
-    <!--</style>-->
-
-    <!--<style name="ActionBar.Transparent.Example" parent="@android:style/Widget.Holo.Light.ActionBar">-->
-        <!--<item name="android:background">@drawable/ab_transparent_example</item>-->
-        <!--<item name="android:progressBarStyle">@style/ProgressBar.Example</item>-->
-    <!--</style>-->
-
-    <!--<style name="TextActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">-->
-        <!--<item name="android:textColor">@android:color/white</item>-->
-        <!--<item name="android:textSize">@dimen/textSizeTittle</item>-->
-    <!--</style>-->
-
-    <!--<style name="PopupMenu.Example" parent="@android:style/Widget.Holo.Light.ListPopupWindow">-->
-        <!--<item name="android:popupBackground">@drawable/menu_dropdown_panel_example</item>-->
-    <!--</style>-->
-
-    <!--<style name="DropDownListView.Example" parent="@android:style/Widget.Holo.Light.ListView.DropDown">-->
-        <!--<item name="android:listSelector">@drawable/selectable_background_example</item>-->
-    <!--</style>-->
-
-    <!--<style name="ActionBarTabStyle.Example" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">-->
-        <!--<item name="android:background">@drawable/tab_indicator_ab_example</item>-->
-    <!--</style>-->
-
-    <!--<style name="DropDownNav.Example" parent="@android:style/Widget.Holo.Light.Spinner">-->
-        <!--<item name="android:background">@drawable/spinner_background_ab_example</item>-->
-        <!--<item name="android:popupBackground">@drawable/menu_dropdown_panel_example</item>-->
-        <!--<item name="android:dropDownSelector">@drawable/selectable_background_example</item>-->
-    <!--</style>-->
-
-    <!--<style name="ProgressBar.Example" parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal">-->
-        <!--<item name="android:progressDrawable">@drawable/progress_horizontal_example</item>-->
-    <!--</style>-->
-
-    <!--<style name="ActionButton.CloseMode.Example" parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode">-->
-        <!--<item name="android:background">@drawable/btn_cab_done_example</item>-->
-    <!--</style>-->
-
-    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
-    <!--<style name="Theme.Example.Widget" parent="@android:style/Theme.Holo">-->
-        <!--<item name="android:popupMenuStyle">@style/PopupMenu.Example</item>-->
-        <!--<item name="android:dropDownListViewStyle">@style/DropDownListView.Example</item>-->
-    <!--</style>-->
-
-<!--</resources>-->

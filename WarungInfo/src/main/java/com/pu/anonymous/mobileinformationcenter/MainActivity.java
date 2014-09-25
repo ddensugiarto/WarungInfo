@@ -1,214 +1,134 @@
 package com.pu.anonymous.mobileinformationcenter;
 
+import android.annotation.TargetApi;
 import android.content.res.Configuration;
-import android.content.res.TypedArray;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
-import android.view.Menu;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-import com.pu.anonymous.mobileinformationcenter.adapter.NavDrawerListAdapter;
-import com.pu.anonymous.mobileinformationcenter.model.NavDrawerItem;
-
-import java.util.ArrayList;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 /**
  * Created by Anonymous on 08/09/2014.
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends BaseActivity {
+    public Fragment mContent;
+    public TextView mTitle;
 
-    private DrawerLayout mDrawerLayout;
-    private RelativeLayout mDrawer;
-    private ListView mDrawerList;
-    private ActionBarDrawerToggle mDrawerToggle;
+    // protected abstract int getLayoutResource();
 
-    // NavigationDrawer title "Nasdaq" in this example
-    private CharSequence mDrawerTitle;
-
-    //  App title "Navigation Drawer" in this example
-    private CharSequence mTitle;
-
-    // slider menu items details
-    private String[] navMenuTitles;
-    private TypedArray navMenuIcons;
-
-    private ArrayList<NavDrawerItem> navDrawerItems;
-    private NavDrawerListAdapter adapter;
-
-    private ActionBar actionBar;
-
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.activity_my);
 
-        mTitle = mDrawerTitle = getTitle();
+        // check if the content frame contains the menu frame
+        if (findViewById(R.id.menu_frame) == null) {
+            setBehindContentView(R.layout.menu_frame);
+            getSlidingMenu().setSlidingEnabled(true);
+            getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+            // show home as up so we can toggle
+            getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // getting items of slider from array
-        navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
-
-        // getting Navigation drawer icons from res
-        navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
-
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
-        mDrawer = (RelativeLayout) findViewById(R.id.lin_lay);
-
-        navDrawerItems = new ArrayList<NavDrawerItem>();
-
-        // list item in slider at 1
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
-        // list item in slider at 2
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
-        // list item in slider at 3
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
-        // list item in slider at 4
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
-
-        // Recycle array
-        navMenuIcons.recycle();
-
-        mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
-
-        // setting list adapter for Navigation Drawer
-        adapter = new NavDrawerListAdapter(getApplicationContext(),navDrawerItems);
-        mDrawerList.setAdapter(adapter);
-
-        // Enable action bar icon_luncher as toggle Home Button
-        actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
-
-
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.button_menu, R.string.menu, R.string.app_name) {
-
-            public void onDrawerClosed(View view) {
-                actionBar.setTitle(mTitle);
-                invalidateOptionsMenu();
-                mDrawerLayout.closeDrawer(mDrawer);
-            }
-
-            public void onDrawerOpened(View drawerView) {
-                actionBar.setTitle(R.string.menu);
-                invalidateOptionsMenu();
-                mDrawerLayout.openDrawer(mDrawer);
-            }
-        };
-
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-        if (savedInstanceState == null) {
-            displayView(0);
-        }
-
-    }
-
-    private class SlideMenuClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position,
-                                long id) {
-            // display view for selected item
-            displayView(position);
-        }
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //  title/icon
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-//        // Handle action bar actions click
-//        switch (item.getItemId()) {
-//            case R.id.action_settings:
-//                return true;
-//            default:
-                return super.onOptionsItemSelected(item);
-//        }
-    }
-
-    //called when invalidateOptionsMenu() invoke
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        // if Navigation drawer is opened, hide the action items
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawer);
-//        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
-        return super.onPrepareOptionsMenu(menu);
-    }
-
-
-
-    private void displayView(int position) {
-        // update the main content with called Fragment
-        Fragment fragment = null;
-
-        switch (position) {
-            case 0:
-                fragment = new FragmentBeritaBaru();
-                break;
-            case 1:
-                fragment = new FragmentProfileHolder();
-                break;
-            case 2:
-                fragment = new FragmentGaleri();
-                break;
-            case 3:
-                fragment = new FragmentAgenda();
-                break;
-
-            default:
-                break;
-        }
-
-        if (fragment != null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
-
-            // update selected item and title, then close the drawer
-            mDrawerList.setItemChecked(position, true);
-            mDrawerList.setSelection(position);
-            setTitle(navMenuTitles[position]);
-            mDrawerLayout.closeDrawer(mDrawer);
         } else {
-            // error in creating fragment
-            Log.e("MainActivity", "Error in creating fragment");
+            // add a dummy view
+            View v = new View(this);
+            setBehindContentView(v);
+            getSlidingMenu().setSlidingEnabled(false);
+            getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
         }
-    }
 
-    @Override
-    public void setTitle(CharSequence title) {
-        mTitle = title;
-        actionBar.setTitle(mTitle);
-    }
+        mTitle = (TextView) LayoutInflater.from(this).inflate(
+                R.layout.actionbar_custom_title_center, null);
+        android.app.ActionBar.LayoutParams params = new android.app.ActionBar.LayoutParams(
+                ActionBar.LayoutParams.MATCH_PARENT,
+                ActionBar.LayoutParams.MATCH_PARENT);
 
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        mDrawerToggle.syncState();
+        getActionBar().setDisplayShowCustomEnabled(true);
+        getActionBar().setCustomView(mTitle, params);
+
+        if (savedInstanceState != null)
+            mContent = getSupportFragmentManager().getFragment(
+                    savedInstanceState, "mContent");
+
+        if (mContent == null)
+            mContent = new FragmentBeritaBaru();
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content_frame, mContent).commit();
+
+        // set the Behind View Fragment
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.menu_frame, new SideMenuFragment()).commit();
+        mTitle.setText("Berita Baru");
+//		mTitle.setPadding(-45, 0, 0, 0);
+
+        // customize the SlidingMenu
+        SlidingMenu sm = getSlidingMenu();
+        sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        sm.setShadowWidthRes(R.dimen.shadow_width);
+        sm.setShadowDrawable(R.drawable.shadow);
+        sm.setBehindScrollScale(0.25f);
+        sm.setFadeDegree(0.25f);
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
+        // TODO Auto-generated method stub
         super.onConfigurationChanged(newConfig);
-        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                toggle();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        getSupportFragmentManager().putFragment(outState, "mContent", mContent);
+    }
+
+    public void switchContent(final Fragment fragment) {
+        mContent = fragment;
+        if (mContent instanceof FragmentBeritaBaru) {
+            mTitle.setText("Berita Baru");
+//			mTitle.setPadding(-45, 0, 0, 0);
+        }
+        else if (mContent instanceof FragmentProfileHolder) {
+            mTitle.setText("Profil Bina Pelaksanaan II");
+//			mTitle.setPadding(-25, 0, 0, 0);
+        }
+        else if (mContent instanceof FragmentGaleri) {
+            mTitle.setText("Galeri");
+//			mTitle.setPadding(-30, 0, 0, 0);
+        }
+        else if (mContent instanceof FragmentAgenda) {
+            mTitle.setText("Agenda");
+//            mTitle.setPadding(-30, 0, 0, 0);
+        }
+
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content_frame, fragment).commit();
+        Handler h = new Handler();
+        h.postDelayed(new Runnable() {
+            public void run() {
+                getSlidingMenu().showContent();
+            }
+        }, 50);
     }
 
 }

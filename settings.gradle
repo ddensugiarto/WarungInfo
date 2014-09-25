@@ -1,1 +1,1 @@
-include ':WarungInfo'
+include ':WarungInfo', ':slidingMenuLib'

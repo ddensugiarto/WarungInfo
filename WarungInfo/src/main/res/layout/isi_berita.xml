@@ -81,16 +81,9 @@
             android:layout_alignParentLeft="true"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
-            android:src="@drawable/select_share" />
+            android:src="@drawable/select_share"
+            android:layout_below="@+id/berita_isi"/>
 
-        <ImageButton
-            android:id="@+id/berita_btnDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/layout_height"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/berita_isi"
-            android:background="@android:color/transparent"
-            android:src="@drawable/btn_baca_komentar" />
 
     </RelativeLayout>
 </ScrollView>

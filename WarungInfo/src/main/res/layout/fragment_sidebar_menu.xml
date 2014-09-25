@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cm="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawer_list_selection">
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cokelat_muda">
+
+        <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
+            cm:fontType="roman"
+            android:id="@+id/txt_jelajahi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_toRightOf="@+id/icon_navbar"
+            android:textColor="@color/white"
+            android:text="JELAJAHI"
+            android:paddingLeft="5dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:gravity="center_vertical"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative2"
+        android:layout_below="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <ImageView
+            android:id="@+id/icon_con"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/icon_berita_terbaru" />
+
+        <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
+            cm:fontType="roman"
+            android:id="@+id/txt_berita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/icon_con"
+            android:text="Berita Terbaru"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/username_textSize" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/list_divider1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/relative2"
+        android:background="#323232" />
+
+    <RelativeLayout
+        android:id="@+id/relative3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative2"
+        android:clickable="true"
+        android:paddingBottom="7dp"
+        android:paddingTop="7dp">
+
+        <ImageView
+            android:id="@+id/icon_con2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/icon_profile_user" />
+
+        <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
+            android:textSize="@dimen/username_textSize"
+            cm:fontType="roman"
+            android:id="@+id/txt_profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/icon_con2"
+            android:text="Profil Binlak 2"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/list_divider2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/relative3"
+        android:background="#323232" />
+
+    <RelativeLayout
+        android:id="@+id/relative4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative3"
+        android:clickable="true"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <ImageView
+            android:id="@+id/icon_con3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/icon_gallery" />
+
+        <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
+            android:textSize="@dimen/username_textSize"
+            cm:fontType="roman"
+            android:id="@+id/txt_galeri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/icon_con3"
+            android:text="Galeri"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/list_divider3"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/relative4"
+        android:background="#323232" />
+
+    <RelativeLayout
+        android:id="@+id/relative5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative4"
+        android:clickable="true"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <ImageView
+            android:id="@+id/icon_con4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/icon_agenda" />
+
+        <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
+            cm:fontType="roman"
+            android:id="@+id/txt_agenda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/icon_con4"
+            android:text="Agenda"
+            android:textColor="@android:color/white"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/list_divider4"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/relative5"
+        android:background="#323232" />
+
+    <View
+        android:id="@+id/list_divider5"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/relative6"
+        android:background="#323232" />
+
+    <RelativeLayout
+        android:id="@+id/relative6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <ImageView
+            android:id="@+id/icon_con5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/icon_logout" />
+
+        <com.pu.anonymous.mobileinformationcenter.view.CustomTextView
+            android:id="@+id/txt_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/icon_con5"
+            android:text="Log out"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/username_textSize"
+            cm:fontType="roman" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

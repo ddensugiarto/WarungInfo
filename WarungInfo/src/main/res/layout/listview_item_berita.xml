@@ -63,6 +63,7 @@
             android:layout_height="@dimen/layout_height"
             android:layout_alignParentRight="true"
             android:background="@android:color/transparent"
-            android:src="@drawable/btn_baca_komentar" />
+            android:src="@drawable/btn_baca_selengkapnya" />
+
     </RelativeLayout>
 </RelativeLayout>

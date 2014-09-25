@@ -33,7 +33,9 @@
     <dimen name="img_height">120dp</dimen>
 
     <!-- GALERI -->
-    <dimen name="img_height_galeri">300dp</dimen>
+    <dimen name="img_height_galeri">350dp</dimen>
+    <dimen name="margin_top">-50dp</dimen>
+
 
     <!-- PROFIL BINLAK -->
 	<dimen name="ImageView_Height">200dp</dimen>

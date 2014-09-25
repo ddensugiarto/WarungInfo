@@ -7,6 +7,10 @@
     <color name="cokelat_tua">#252525</color>
     <color name="yellow">#fdca00</color>
     <color name="biru">#004684</color>
+    <color name="biru_muda">#00AAFF</color>
+
+    <color name="button_color">#FFCD00</color>
+    <color name="button_color_hover">#FEDD54</color>
 
 
 </resources>

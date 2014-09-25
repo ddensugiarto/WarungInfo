@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,19 +36,22 @@ public class Login extends Activity {
     Button btnTapHere;
     EditText etUsername, etPassword;
     String username, password;
-    int result;
+    public static String session, usernamepref,
+            passwordpref;
+    int result, hint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        LoadPreferencesSession();
+
         btnTapHere = (Button) findViewById(R.id.btn_tap_here);
         btnTapHere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Show Dialog Forgot Password",
-                        Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Login.this, ForgotPassword.class));
             }
         });
 
@@ -59,7 +64,8 @@ public class Login extends Activity {
         @Override
         public void onClick(View v) {
             if (isNetworkAvailable()) {
-//              LoadPreferencesSession();
+
+                LoadPreferencesSession();
                 username = etUsername.getText().toString();
                 password = etPassword.getText().toString();
 
@@ -68,6 +74,7 @@ public class Login extends Activity {
 
                    else {
                        new LoginTask().execute();
+                       LoadPreferencesSession();
                    }
             } else
                 Toast.makeText(getApplicationContext(), "Koneksi Tidak Tersedia", Toast.LENGTH_LONG)
@@ -79,15 +86,13 @@ public class Login extends Activity {
 
         btnSignUp = (ImageButton) findViewById(R.id.btn_lg_signup);
         btnSignUp.setOnClickListener(new View.OnClickListener() {
-                                         @Override
-                                         public void onClick(View v) {
 
-                                             startActivity(new Intent(Login.this, SignUp.class));
+             @Override
+             public void onClick(View v) {
+                 startActivity(new Intent(Login.this, SignUp.class));
 
-                                         }
-                                     }
-
-        );
+             }
+        });
 
     }
 
@@ -150,13 +155,14 @@ public class Login extends Activity {
 
         @Override
         protected void onPostExecute(String result) {
+            LoadPreferencesSession();
             super.onPostExecute(result);
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
 
             if (result.equals("1")) {
-
+                SavePreferences("session", "login");
                 startActivity(new Intent(Login.this, MainActivity.class));
 
             } else if (result.equals("0")) {
@@ -165,8 +171,35 @@ public class Login extends Activity {
                         .show();
 
             }
-
         }
 
+    }
+
+    private void SavePreferences(String key, String value) {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key, value);
+        editor.commit();
+    }
+
+    private void LoadPreferencesSession() {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        session = sharedPreferences.getString("session", "");
+        usernamepref = sharedPreferences.getString("username", "");
+        passwordpref = sharedPreferences.getString("password", "");
+
+    }
+
+    public boolean session() {
+        LoadPreferencesSession();
+        System.out.println("session :" + session);
+        if (session.equals("login")) {
+            startActivity(new Intent(Login.this, MainActivity.class));
+            return true;
+        } else
+            setContentView(R.layout.login);
+            return false;
     }
 }

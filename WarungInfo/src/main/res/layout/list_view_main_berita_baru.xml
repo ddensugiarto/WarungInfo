@@ -33,6 +33,7 @@
             android:background="@android:color/transparent"
             android:inputType="textPersonName"
             android:padding="5dp"
+
             android:textSize="@dimen/username_textSize"></EditText>
 
     </RelativeLayout>

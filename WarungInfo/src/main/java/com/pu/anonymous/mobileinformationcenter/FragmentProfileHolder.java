@@ -22,9 +22,9 @@ public class FragmentProfileHolder extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
         ft.replace(R.id.profil_holder, new FragmentProfilBinlak());
         ft.commit();
+
     }
 }

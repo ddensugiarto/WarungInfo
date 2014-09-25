@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/WarungInfo" />
+            <option value="$PROJECT_DIR$/slidingMenuLib" />
           </set>
         </option>
       </GradleProjectSettings>
